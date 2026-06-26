@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border;
+}
+
+html, body, #root {
+  @apply h-full w-full;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Confetti animation */
+@keyframes confetti-fall {
+  to {
+    transform: translateY(100vh) rotateZ(360deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  pointer-events: none;
+  animation: confetti-fall 3s ease-in forwards;
+}
+
+/* Progress ring animation */
+@keyframes stroke-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.progress-circle {
+  animation: stroke-animation 0.6s ease;
+}
